@@ -4,14 +4,20 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "dev": "vite Frontend",
+    "build": "pnpm build:client && pnpm build:server",
+    "build:client": "vite build Frontend --outDir ../dist/client",
+    "build:server": "vite build Frontend --outDir ../dist/server --ssr ./src/entry-server.jsx",
+    "lint": "pnpm lint:s && pnpm lint:f",
+    "lint:s": "eslint . && eslint Frontend",
+    "lint:f": "eslint Frontend",
+    "preview": "vite preview Frontend",
+    "ssg": "node ssg.js"
   },
   "dependencies": {
     "axios": "^1.8.1",
     "bootstrap": "^5.3.3",
+    "express": "^5.1.0",
     "react": "^19.0.0",
     "react-bootstrap": "^2.10.9",
     "react-dom": "^19.0.0"
@@ -19,10 +25,12 @@
   "devDependencies": {
     "@eslint/js": "^9.21.0",
     "@stylistic/eslint-plugin-js": "^4.1.0",
+    "@types/express": "^5.0.1",
+    "@types/node": "^22.14.0",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "@vitejs/plugin-react": "^4.3.4",
-    "eslint": "^9.21.0",
+    "eslint": "^9.23.0",
     "eslint-plugin-react": "^7.37.4",
     "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-react-refresh": "^0.4.19",

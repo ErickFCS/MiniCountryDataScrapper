@@ -52,6 +52,7 @@ const CountryInfo = ({ info }) => {
 
     useEffect(() => {
         if (!info) return;
+        if (!info.capital || info.capital.length === 0) return;
         fetchWeatherFromCity(info.capital[0])
             .then((res) => {
                 setWeather(res);
@@ -60,7 +61,6 @@ const CountryInfo = ({ info }) => {
     }, [info]);
 
     if (!info) return null;
-    console.log(info.capital[0]);
 
     return (
         <Card style={{ maxWidth: 500 }}>
