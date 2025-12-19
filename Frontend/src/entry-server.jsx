@@ -1,7 +1,14 @@
-import { renderToString } from 'react-dom/server';
-import App from './App'
+import { renderToString } from "react-dom/server";
+import App from "./App";
 
-export const render = () => {
-    const html = renderToString(<App />)
-    return { html }
-}
+
+export const render = (url) => {
+    let validPaths = ["/"];
+    if (!validPaths.includes(url)) return "";
+    return {
+        head: "",
+        html: renderToString(
+            <App />
+        )
+    };
+};

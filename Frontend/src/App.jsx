@@ -1,9 +1,10 @@
+import "bootstrap/dist/css/bootstrap.min.css";
 import { useState, useEffect } from "react";
 import CountryInfo from "./components/CountryInfo";
 import CountryList from "./components/CountryList";
 import SearchBar from "./components/SearchBar";
-import restCountriesService from "./services/restCountriesService";
 import Stack from "react-bootstrap/Stack";
+import restCountriesService from "./services/restCountriesService";
 
 function App() {
     const [countries, setCountries] = useState([]);
