@@ -2,37 +2,44 @@ name: pipeline
 
 on:
   push:
-    branches: 
+    branches:
       - main
   pull_request:
-    branches: 
+    branches:
       - main
-    types: 
+    types:
       - opened
       - synchronize
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  pipeline:
+    runs-on: ubuntu-24.04
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
         with:
-          node-version: '22'
-      - name: Install pnpm
-        run: npm install -g pnpm
-      - name: Install dependencies
-        run: pnpm install
-      - name: Linting
+          version: 10
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Installing dependencies
+        run: pnpm i --recursive --frozen-lockfile
+
+      - name: Running linting
         run: pnpm lint
-      - name: Build
+      - name: Building frontend
         run: pnpm build
-      - name: Build ssg
-        run: pnpm ssg
-      - name: Deploy
+
+      - name: Deploy to render
+        if: ${{ github.event_name == 'push' }}
+        run: curl https://api.render.com/deploy/srv-${{secrets.RENDER_SERVICE_ID}}?key=${{secrets.RENDER_API_KEY}}
+
+      - name: Replaces /assets/* links in the index.html to ./assets/* for gh-pages compatibility
+        run: sed -i "s/\/assets/\.\/assets/" index.html
+        working-directory: ./dist/client
+      - name: Deploy to github pages
+        if: ${{ github.event_name == 'push' }}
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist/ssg
+          publish_dir: ./dist/client

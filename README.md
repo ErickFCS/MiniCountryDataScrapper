@@ -1,6 +1,7 @@
 # Mini Country Data Scrapper
 
 This project is a mini web application built with React, Vite, and Bootstrap. It allows users to search for a country and get it's basic information.
+It is an example or pregenerated SSR with react web applications for static web sites.
 
 ## Technologies Used
 
@@ -11,6 +12,11 @@ This project is a mini web application built with React, Vite, and Bootstrap. It
 ## Features
 
 - Responsive design using Bootstrap.
+
+## Lives
+
+- [Vanilla React Static Site](https://erickfcs.github.io/MiniCountryDataScrapper/ "No SSR")
+- [SSR React Static Site](https://erickfcs.github.io/MiniCountryDataScrapper/ "SSR pregenerated" )
 
 ## Getting Started
 
@@ -25,33 +31,14 @@ This project is a mini web application built with React, Vite, and Bootstrap. It
    ```bash
    git clone <repository-url>
    cd <repository-name>
-2. Start development vite server
-- With NPM
-
-   ```bash
-   npm install
-   npm run dev
-- With PNPM
-
-   ```bash
-   pnpm install
-   pnpm dev
+   ```
 
 ### Build
 
-1. Clone the repository:
-   
-   ```bash
-   git clone <repository-url>
-   cd <repository-name>
 2. Build the source
-- With NPM
 
    ```bash
-   npm install
-   npm run build
-- With PNPM
-
-   ```bash
-   pnpm install
-   pnpm build
+   <npm or pnpm> install
+   <npm or pnpm> run build
+   ```
+   ```

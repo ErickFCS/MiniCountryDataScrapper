@@ -1,40 +1,39 @@
 {
-  "name": "data-for-countries",
-  "private": true,
+  "name": "mini-country-data-scrapper",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite Frontend",
-    "build": "pnpm build:client && pnpm build:server",
-    "build:client": "vite build Frontend --outDir ../dist/client",
-    "build:server": "vite build Frontend --outDir ../dist/server --ssr ./src/entry-server.jsx",
+    "build": "pnpm build:c && pnpm build:s && pnpm build:ssr",
+    "build:c": "vite build Frontend --outDir ../dist/client",
+    "build:s": "vite build Frontend --outDir ../dist/server --ssr ./src/entry-server.jsx",
+    "build:ssr": "node ssrGenerator.js",
     "lint": "pnpm lint:s && pnpm lint:f",
-    "lint:s": "eslint . && eslint Frontend",
-    "lint:f": "eslint Frontend",
-    "preview": "vite preview Frontend",
-    "ssg": "node ssg.js"
+    "lint:fix": "pnpm lint:s --fix && pnpm lint:f --fix",
+    "lint:s": "eslint -c ./eslint.config.js .",
+    "lint:f": "eslint -c ./Frontend/eslint.config.js Frontend"
   },
   "dependencies": {
-    "axios": "^1.8.1",
-    "bootstrap": "^5.3.3",
-    "express": "^5.1.0",
-    "react": "^19.0.0",
-    "react-bootstrap": "^2.10.9",
-    "react-dom": "^19.0.0"
+    "@stylistic/eslint-plugin": "^5.6.1",
+    "axios": "^1.13.2",
+    "bootstrap": "^5.3.8",
+    "express": "^5.2.1",
+    "react": "^19.2.3",
+    "react-bootstrap": "^2.10.10",
+    "react-dom": "^19.2.3"
   },
   "devDependencies": {
-    "@eslint/js": "^9.21.0",
-    "@stylistic/eslint-plugin-js": "^4.1.0",
-    "@types/express": "^5.0.1",
-    "@types/node": "^22.14.0",
-    "@types/react": "^19.0.10",
-    "@types/react-dom": "^19.0.4",
-    "@vitejs/plugin-react": "^4.3.4",
-    "eslint": "^9.23.0",
-    "eslint-plugin-react": "^7.37.4",
-    "eslint-plugin-react-hooks": "^5.1.0",
-    "eslint-plugin-react-refresh": "^0.4.19",
-    "globals": "^16.0.0",
-    "vite": "^6.2.0"
+    "@eslint/js": "^9.39.2",
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.0.3",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.2",
+    "eslint": "^9.39.2",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.4.26",
+    "globals": "^16.5.0",
+    "vite": "^7.3.0"
   }
 }
