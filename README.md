@@ -16,7 +16,7 @@ It is an example or pregenerated SSR with react web applications for static web 
 ## Lives
 
 - [Vanilla React Static Site](https://erickfcs.github.io/MiniCountryDataScrapper/ "No SSR")
-- [SSR React Static Site](https://erickfcs.github.io/MiniCountryDataScrapper/ "SSR pregenerated" )
+- [SSR React Static Site](https://minicountrydatascrapper.onrender.com "SSR pregenerated" )
 
 ## Getting Started
 
