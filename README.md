@@ -1,7 +1,6 @@
 # Mini Country Data Scrapper
 
-This project is a mini web application built with React, Vite, and Bootstrap. It allows users to search for a country and get it's basic information.
-It is an example or pregenerated SSR with react web applications for static web sites.
+responsive Country Information Discovery Tool built with React and Vite, designed to provide real-time data retrieval through a public REST API. The application features a highly optimized search interface that utilizes Debouncing techniques to minimize API overhead and improve user experience. By leveraging Bootstrap, the app delivers a clean, mobile-first UI that displays key geographic and political data instantly without the need for a dedicated backend.
 
 ## Technologies Used
 
