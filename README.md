@@ -1,5 +1,9 @@
 # Mini Country Data Scrapper
 
+<p align="center">
+  <img src="/overview.png" alt="Awesome Image" width="600">
+</p>
+
 responsive Country Information Discovery Tool built with React and Vite, designed to provide real-time data retrieval through a public REST API. The application features a highly optimized search interface that utilizes Debouncing techniques to minimize API overhead and improve user experience. By leveraging Bootstrap, the app delivers a clean, mobile-first UI that displays key geographic and political data instantly without the need for a dedicated backend.
 
 ## Technologies Used
