@@ -1,4 +1,4 @@
-# Mini Country Data Scrapper
+# Geographic Data Explorer
 
 <p align="center">
   <img src="/overview.png" alt="Awesome Image" width="600">
